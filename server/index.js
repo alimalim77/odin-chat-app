@@ -28,4 +28,8 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {});
 });
 
-server.listen(3001, () => {});
+const port = process.env.PORT || 3001; // Use the provided PORT environment variable by Render or default to 3001
+
+server.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
