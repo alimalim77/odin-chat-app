@@ -9,7 +9,7 @@ const server = http.createServer(app);
 
 const io = new Server(server, {
   cors: {
-    origin: "https://chat-app-mufa.onrender.com",
+    origin: "http://localhost:3000",
     methods: ["GET", "POST"],
   },
 });
@@ -28,8 +28,4 @@ io.on("connection", (socket) => {
   socket.on("disconnect", () => {});
 });
 
-const port = process.env.PORT || 3001; // Use the provided PORT environment variable by Render or default to 3001
-
-server.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
-});
+server.listen(3001, () => {});
