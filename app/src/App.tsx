@@ -3,7 +3,7 @@ import { io, Socket } from "socket.io-client";
 import { useState } from "react";
 import Chat from "./Chat";
 
-const socket: Socket = io("https://localhost:3001"); //Default was chat-app-mufa.onrender.com
+const socket: Socket = io(process.env.REACT_APP_URL ); //Default was chat-app-mufa.onrender.com
 
 const App: React.FC = () => {
   const [username, setUsername] = useState<string>("");
